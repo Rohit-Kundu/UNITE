@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style>
+      td,
+      th {
+         border: 0px solid black;
+      }
+
+      img {
+         padding: 5px;
+      }
+   </style>
+   <title>Towards a Universal Synthetic Video Detector: From Face or Background Manipulations to Fully AI-Generated Content</title>
+
+   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+   <link rel="stylesheet" href="./static/css/bulma.min.css">
+   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+   <link rel="stylesheet" href="./static/css/index.css">
+   <link rel="icon" href="./static/images/favicon.svg">
+   <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+   <link rel="stylesheet" href="css/app.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script defer src="./static/js/fontawesome.all.min.js"></script>
+   <script src="./static/js/bulma-carousel.min.js"></script>
+   <script src="./static/js/bulma-slider.min.js"></script>
+   <script src="./static/js/index.js"></script>
+   <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<!-- <body>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="https://keunhong.com">
+            <span class="icon">
+                <i class="fas fa-home"></i>
+            </span>
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More Research
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="https://hypernerf.github.io">
+                  HyperNeRF
+                </a>
+                <a class="navbar-item" href="https://nerfies.github.io">
+                  Nerfies
+                </a>
+                <a class="navbar-item" href="https://latentfusion.github.io">
+                  LatentFusion
+                </a>
+                <a class="navbar-item" href="https://photoshape.github.io">
+                  PhotoShape
+                </a>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </nav> -->
+<section class="hero">
+   <div class="hero-body">
+      <div class="container is-max-desktop">
+         <div class="columns is-centered">
+            <div class="column has-text-centered">
+               <h1 class="title is-1 publication-title" , style="color:purple;">UNITE:</h1>
+               <h1 class="title is-4 publication-title">Towards a Universal Synthetic Video Detector: From Face or Background Manipulations to Fully AI-Generated Content</h1>
+               <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                     <a href="https://rohit-kundu.github.io/">Rohit Kundu</a><sup>1,2</sup>,</span>
+                  <span class="author-block">
+                     <a href="https://scholar.google.com/citations?user=05976DAAAAAJ&hl=en&oi=ao">Hao Xiong</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                     <a href="https://sites.google.com/view/vishalmohanty/">Vishal Mohanty</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                     <a href="https://www.linkedin.com/in/athulab/">Athula Balachandran</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                     <a href="https://vcg.ece.ucr.edu/amit">Amit K. Roy-Chowdhury</a><sup>2</sup></span>
+                  </span>
+               </div>
+               <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>Google (YouTube)</span>,
+                  <span class="author-block"><sup>2</sup>University of California, Riverside</span>
+               </div>
+                   <div class="is-size-5 column has-text-centered">
+                     <a href="https://cvpr.thecvf.com/Conferences/2025"><b>CVPR 2025</b></a>
+                     </span>
+                     </div>
+               <div class="column has-text-centered">
+                  <div class="publication-links">
+                     <!-- PDF Link. -->
+                     <span class="link-block">
+                        <a target="_blank" href="https://openaccess.thecvf.com/content/CVPR2025/papers/Kundu_Towards_a_Universal_Synthetic_Video_Detector_From_Face_or_Background_CVPR_2025_paper.pdf"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="fas fa-file-pdf"></i>
+                           </span>
+                           <span>Paper (PDF)</span>
+                        </a>
+                     </span>
+                     <span class="link-block">
+                        <a target="_blank" href="https://arxiv.org/pdf/2412.12278"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="ai ai-arxiv"></i>
+                           </span>
+                           <span>arXiv</span>
+                        </a>
+                     </span>
+                     <span class="link-block">
+                        <a target="_blank" href="static/cvpr25_poster_unite.png"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="far fa-images"></i>
+                           </span>
+                           <span>Poster</span>
+                        </a>
+                     </span>
+                     <!-- Video Link.
+                     <span class="link-block">
+                        <a href="https://www.youtube.com/watch?v=k7xFbELpnv4"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="fab fa-youtube"></i>
+                           </span>
+                           <span>Video (YouTube)</span>
+                        </a>
+                     </span> -->
+
+                     <!-- Dataset Link. -->
+                     <!-- <span class="link-block"> -->
+                        <!-- <a href="static/cvpr25_poster_unite.png"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="far fa-images"></i>
+                           </span>
+                           <span>Poster</span>
+                        </a> -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="hero teaser">
+   <div class="container is-max-desktop">
+      <div class="hero-body">
+         <img class="round center-image" style="width:700px;" src="static/images/teaser.png" />
+         <h2 class="subtitle has-text-justified">
+            <span class="dnerf"></span> <b>Problem Overview</b>: Existing DeepFake detection methods focus on identifying face-manipulated videos, most of which cannot perform inference unless there is a face detected in the video. However, with advancements like seamless background modifications (e.g., AVID) and hyper-realistic content from games like GTA-V and T2V/I2V models, a more comprehensive approach is needed. A model trained with only cross-entropy (CE) loss, using full frames, automatically focuses on the face, capturing temporal discontinuities through its transformer architecture, performing better than random (\( \approx \)) on T2V/I2V content but struggling with background manipulations. <span class="methodname">UNITE</span>, with its attention-diversity (AD) loss, effectively detects both face/background manipulations and fully synthetic content.
+         </h2>
+      </div>
+   </div>
+</section>
+
+<section class="section">
+   <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+         <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+                Existing DeepFake detection techniques primarily focus on facial manipulations, such as face-swapping or lip-syncing. However, advancements in text-to-video (T2V) and image-to-video (I2V) generative models now allow fully AI-generated synthetic content and seamless background alterations, challenging face-centric detection methods and demanding more versatile approaches.
+                
+                To address this, we introduce the <b><u>U</u></b>niversal <b><u>N</u></b>etwork for <b><u>I</u></b>dentifying <b><u>T</u></b>ampered and synth<b><u>E</u></b>tic videos (<span class="methodname">UNITE</span>) model, which, unlike traditional detectors, captures full-frame manipulations. <span class="methodname">UNITE</span> extends detection capabilities to scenarios without faces, non-human subjects, and complex background modifications. It leverages a transformer-based architecture that processes domain-agnostic features extracted from videos via the SigLIP-So400M foundation model. Given limited datasets encompassing both facial/background alterations and T2V/I2V content, we integrate task-irrelevant data alongside standard DeepFake datasets in training. We further mitigate the model's tendency to over-focus on faces by incorporating an attention-diversity (AD) loss, which promotes diverse spatial attention across video frames. Combining AD loss with cross-entropy improves detection performance across varied contexts. Comparative evaluations demonstrate that <span class="methodname">UNITE</span> outperforms state-of-the-art detectors on datasets featuring face/background manipulations and fully synthetic T2V/I2V videos, showcasing its adaptability and generalizable detection capabilities.
+               </p>
+            </div>
+         </div>
+      </div>
+      <!--/ Abstract. -->
+      
+      <!-- Method. -->
+      <section class="section">
+         <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+               <div class="column is-four-fifths">
+                  <h2 class="title is-3">Method</h2>
+               </div>
+            </div>
+         </div>
+         <div class="hero-body">
+             <img class="round center-image" style="width:500px;" src="./static/images/overall.png" alt="overall" />
+         </div>
+         <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <div class="content has-text-justified">
+                    <p class="subtitle has-text-justified">
+                       <span class="dnerf"></span><b><span class="methodname">UNITE</span> architecture overview:</b> We extract domain-agnostic features (\(\xi\)) using the SigLIP-So400m foundation model to mitigate domain gaps between DeepFake datasets. These embeddings, combined with positional encodings, are input to a transformer with multi-head attention and MLP layers, culminating in a classifier for final predictions. AD-loss encourages the model attention to span diverse spatial regions.
+                    </p>
+                    &nbsp;
+                </div>
+              </div>
+            </div>
+         </div>
+      </section>
+      <!--/ Method. -->
+
+      <!-- Results. -->
+      <section class="hero">
+         <div class="hero-body">
+            <div class="container is-max-desktop">
+               <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                     <h2 class="title is-3">Results</h2>
+                     <div class="content has-text-justified">
+                        <center>
+                           <img src="static/images/results.png" alt="results" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Quantitative Results:</u></b> Results from the <span class="methodname">UNITE</span> model trained with (1) FF++ only and (2) FF++ combined with GTA-V. All other results reflect cross-dataset evaluations except for FF++ and GTA-V (when trained). Performance gains are highlighted in <span style="color: #009901;">green</span>.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/sota_face.png" alt="sota_face" border=0 height=200 width=500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>SOTA Comparison on Face-Manipulated Data:</u></b> We compared the performance of <span class="methodname">UNITE</span> with recent DeepFake detectors, in terms of detection accuracy on various face manipulated datasets. <span class="methodname">UNITE</span> outperforms the existing methods. <b>Bold</b> shows the current best results and the previous best and second-best results are highlighted in <span style="color: #ff0000;">red</span> and <span style="color: #0000FF;">blue</span> respectively.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/sota_synthetic.png" alt="sota_synthetic" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>SOTA Comparison on Synthetic Data:</u></b> On the DeMamba dataset (validation split), we compare the performance of <u><span class="methodname">UNITE</span>, which was <em>NOT</em> trained on DeMamba</u> train split, against <u>state-of-the-art detectors <em>which were trained on DeMamba train split</em></u> (results taken from Chen et al.). We report the results (\(P\) = Precision and \(R\) = Recall) on the individual T2V/I2V generators and the average performance across the entire validation set (\(Avg\), which also includes real videos). Although the direct comparison is unfair against <span class="methodname">UNITE</span> which was trained with FF++ and GTA-V, our method still outperforms these synthetic video detectors. <b>Bold</b> shows the current best results and the previous best and second-best results are highlighted in <span style="color: #ff0000;">red</span> and <span style="color: #0000FF;">blue</span> respectively.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/3-class finegrained.png" alt="3-class finegrained" border=0 height=200 width=300 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Results on 3-class Finegrained Classes:</u></b> Results obtained by the <span class="methodname">UNITE</span> model on 3-class finegrained classes: detecting whether a video is real, partially manipulated or fully AI-generated. Performance gains are mentioned in <span style="color: #009901;">green</span>.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/4-class finegrained.png" alt="4-class finegrained" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Results on 4-class Finegrained Classes:</u></b> We divide the existing DeepFake datasets into four categories- (1) face-swap, (2) face-reenactment (3) fully synthetic and (4) real, to perform a 4-class fine-grained classification using <span class="methodname">UNITE</span>. Performance gains are mentioned in <span style="color: #009901;">green</span>. The results show that <span class="methodname">UNITE</span> can effectively classify the videos into these four categories.
+                           <br>
+                           <br>
+
+                        <!-- <center>
+                            <img src="static/images/granularity_change.png" alt="granularity-specific" border=0 height=150
+                                width=1500 />
+                        </center>
+                           <p class="subtitle has-text-justified">
+                            <b><u>Qualitative results with changed granularity:</u></b> The third column shows the U-SAM predictions on PASCAL classes, and the fourth column shows the predictions when the granularity level has been changed to categorize 
+                            <span style="font-style: italic;">"dog"</span>, <span style="font-style: italic;">"cat"</span>, and <span style="font-style: italic;">"sheep"</span> classes as a single 
+                            <span style="font-style: italic;">"animals"</span> class. The colors represent the different class labels: 
+                            <span style="color: brown;">Brown</span>: <span style="font-style: italic;">"sheep"</span>, 
+                            <span style="color: rgb(130, 10, 229);">Violet</span>: <span style="font-style: italic;">"dog"</span>, 
+                            <span style="color: olive;">Dark Brown</span>: <span style="font-style: italic;">"cat"</span>, 
+                            <span style="color: red;">Red</span>: <span style="font-style: italic;">"animals"</span>, 
+                            <span style="color: pink;">Pink</span>: <span style="font-style: italic;">"person"</span>. 
+                            <b><i>GC</i></b>: Granularity Changed.
+                              <br>
+                              <br> -->
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+      <!-- /Results. -->
+      
+      <!-- Ablation. -->
+      <section class="hero">
+         <div class="hero-body">
+            <div class="container is-max-desktop">
+               <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                     <h2 class="title is-3">Ablation Study</h2>
+                     <div class="content has-text-justified">
+                        <center>
+                           <img src="static/images/loss_ablation.png" alt="loss_ablation" border=0 height=200 width=500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Ablation of Loss Functions:</u></b> Ablation Results to show the effect of changing the loss functions used to train the <span class="methodname">UNITE</span> model. The combination of the cross-entropy (CE) and Attention Diversity (AD) losses always performs better, and the contribution from the AD-loss component increases significantly when using fully synthetic data for training.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/frames_vs_performance-1.png" alt="frames_vs_performance" border=0 height=200 width=500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>No. of frames vs. Performance:</u></b> Performance analysis of <span class="methodname">UNITE</span> based on the number of frames sampled per video segment. The results illustrate that as the number of frames increases from 1 to 64 (context window), the detection accuracy improves, showcasing <span class="methodname">UNITE</span>'s ability to effectively capture temporal inconsistencies in fake videos.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/depth_vs_performance-1.png" alt="depth_vs_performance" border=0 height=200 width=500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Transformer Depth Evaluation:</u></b> Performance comparison of <span class="methodname">UNITE</span> with varying the number of encoder blocks (depth). <span class="methodname">UNITE</span> performs optimally in cross-domain settings when the depth is 4. Greater depths overfit to the training domains (FF++ and GTA-V), while a depth of 2 is insufficient to capture the complexity of the data.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/foundation_model_backbone.png" alt="foundation_model_backbone" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Ablation of Foundation Model Backbone:</u></b> Results (accuracy) obtained by <span class="methodname">UNITE</span> when trained with DINOv2 features of FF++ and GTA-V instead of SigLIP-So400m. The results show that the performance gain indeed comes from the AD-loss implementation and is not dependent on the choice of the foundation model.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/tsne.png" alt="tsne" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>t-SNE Analysis:</u></b> t-SNE plots with (w) and without (w/o) AD-loss in cross-dataset settings.
+                        <p>The results from the t-SNE plots reveal a significant improvement in class separability when the AD-loss is incorporated into the training process. The features learned with AD-loss exhibit a clearer distinction between real and fake samples, indicating that the AD-loss helps to create a more discriminative feature space. This enhanced separability is particularly notable in cross-dataset settings, where the model is trained on one dataset but evaluated on another. The improved class separation in these scenarios suggests that the AD-loss not only enhances the model's performance on the training dataset but also improves its generalizability across different datasets.</p>
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/adloss_hyperparam_ablation.png" alt="foundation_model_backbone" border=0 height=200 width=500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Ablation of AD-Loss Hyperparameters:</u></b> Performance comparison of <span class="methodname">UNITE</span> across varying values of the (a) \(\delta_{within}\) and  (b) \(\delta_{between}\) hyperparameters. The results indicate that the model's learning is relatively robust to changes in the hyperparameters. Specifically in (a) the results are consistent when the signs of the first and second parameters of \(\delta_{within}\) are opposite.
+                           <br>
+                           <br>
+
+                        <center>
+                           <img src="static/images/Complete ablation.png" alt="comprehensive_ablation" border=0 height=200 width=1500 />
+                        </center>
+                        <p class="subtitle has-text-justified">
+                            <b><u>Evolution of detection performance under different ablation settings:</u></b> This table highlights the impact of various modifications to the <span class="methodname">UNITE</span> training pipeline on the detection performance (accuracy) across multiple datasets. Starting from a base model using a simple average pooling model on SigLIP-So400m features, we show the effect of changing the architecture to a transformer, incorporating synthetic data into the training process, and adding the proposed AD-Loss. These settings progressively enhance performance, with the addition of AD-Loss achieving near-perfect or significantly improved results across all datasets.
+                           <br>
+                           <br>
+
+                        <p class="subtitle has-text-justified">
+                            <b>NOTE:</b> More results and analysis are available in our <a target="_blank" href="static/Supplementary.pdf">supplementary material</a>.
+                           <br>
+                           <br>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+      <!-- /Ablation. -->
+       
+      <!-- People. -->
+      <section class="hero">
+         <div class="hero-body">
+            <div class="container is-max-desktop">
+               <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                     <h2 class="title is-3">Authors</h2>
+                     <div class="columns is-multiline is-centered">
+                        <!-- Author 1 -->
+                        <div class="column is-one-fifth">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://rohit-kundu.github.io/">
+                              <img class="is-rounded" src="static/authors/rohit.jpg" alt="Rohit Kundu">
+                              </a>
+                           </figure>
+                           <p><b>Rohit Kundu</b></p>
+                           <!-- <p><a href="https://rohit-kundu.github.io/">Website</a></p> -->
+                        </div>
+                        <!-- Author 2 -->
+                        <div class="column is-one-fifth">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://scholar.google.com/citations?user=05976DAAAAAJ&hl=en&oi=ao">
+                              <img class="is-rounded" src="static/authors/hao.jpg" alt="Hao Xiong">
+                              </a>
+                           </figure>
+                           <p><b>Hao Xiong</b></p>
+                        </div>
+                        <!-- Author 3 -->
+                        <div class="column is-one-fifth">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://sites.google.com/view/vishalmohanty/">
+                              <img class="is-rounded" src="static/authors/vishal.jpg" alt="Vishal Mohanty">
+                              </a>
+                           </figure>
+                           <p><b>Vishal Mohanty</b></p>
+                        </div>
+                        <!-- Author 4 -->
+                        <div class="column is-one-fifth">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://www.linkedin.com/in/athulab/">
+                              <img class="is-rounded" src="static/authors/athula.png" alt="Athula Balachandran">
+                              </a>
+                           </figure>
+                           <p><b>Athula Balachandran</b></p>
+                        </div>
+                        <!-- Author 5 -->
+                        <div class="column is-one-fifth">
+                           <figure class="image is-128x128 is-inline-block">
+                              <a target="_blank" href="https://vcg.ece.ucr.edu/amit">
+                              <img class="is-rounded" src="static/authors/amit.avif" alt="Amit K. Roy-Chowdhury">
+                              </a>
+                           </figure>
+                           <p><b>Amit K. Roy-Chowdhury</b></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+       
+      <!-- BibTeX. -->
+            <section class="section" id="BibTeX">
+               <div class="container is-max-desktop content">
+                  <h2 class="title">BibTeX</h2>
+                  <pre><code>@inproceedings{kundu2025towards,
+  title={Towards a Universal Synthetic Video Detector: From Face or Background Manipulations to Fully AI-Generated Content},
+  author={Kundu, Rohit and Xiong, Hao and Mohanty, Vishal and Balachandran, Athula and Roy-Chowdhury, Amit K},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition (CVPR) Conference},
+  pages={28050--28060},
+  year={2025}
+}</code></pre>
+               </div>
+            </section>
+            <script>
+               const viewers = document.querySelectorAll(".image-compare");
+               viewers.forEach((element) => {
+                  let view = new ImageCompare(element, {
+                     hoverStart: true,
+                     addCircle: true
+                  }).mount();
+               });
+
+               $(document).ready(function () {
+                  var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+                     lineNumbers: false,
+                     lineWrapping: true,
+                     readOnly: true
+                  });
+                  $(function () {
+                     $('[data-toggle="tooltip"]').tooltip()
+                  })
+               });
+            </script>
+            <br>
+      <!-- /BibTeX. -->
+
+            <!-- Footers. -->
+            <p style="text-align:center"> <img
+                  src="https://badges.toozhao.com/badges/01HTTX5CCFCP5V35WK5JYTW63R/green.svg" /> </a></p>
+
+            <p style="text-align:center"> Copyright: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> CC
+                  BY-NC-SA 4.0</a> © Rohit Kundu | Last updated: 07 June 2025 | Website credits to  <a
+                  href="https://nerfies.github.io/"> Nerfies</a></a></p>
+            </body>
+
+</html>
